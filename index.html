@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
+<meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
+<title>flappy bird</title>
+<link rel="stylesheet" type="text/css" href="css/bird.css"/>
+</head>
+
+<body onselectstart="return false;">
+
+
+<div class="game">
+
+    <div class="bird bird-fly">
+        <b class="eye">.</b>
+        <b class="month">一</b>
+        <b class="wing"></b>
+    </div>
+
+    <div class="obstacle">
+        <div class="obstacle-b-bar">
+          <div class="obstacle-b-line"></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-t"></div>
+            <div class="pillar-b"></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-t"></div>
+            <div class="pillar-b"></div>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-t"></div>
+            <div class="pillar-b"></div>
+        </div>
+
+    </div>
+
+    <!--游戏开始-->
+    <div class="game-status-layer game-start">
+      <h2 class="game-status-layer-tit">Get Ready!</h2>
+        <p class="game-over-action">
+        <a href="javascript:;" class="game-btn start-game">开始游戏</a>
+      </p>
+    </div>
+
+    <!--游戏结束-->
+    <div class="game-status-layer game-over">
+      <h2 class="game-status-layer-tit">Game Over !</h2>
+      <div class="score">
+        <p class="score-info">
+          <span class="score-key">本次所得分数：</span>
+          <span class="score-val"><strong class="now-score">0</strong></span>
+        </p>
+        <p class="score-info">
+          <span class="score-key">历史最高分数：</span>
+          <span class="score-val"><strong class="highest-score">0</strong></span>
+        </p>
+      </div>
+      <p class="game-over-action">
+        <a href="javascript:;" class="game-btn quit-game">退出游戏</a>
+        <a href="javascript:;" class="game-btn reset-game">再玩一次</a>
+      </p>
+    </div>
+
+    <strong class="counter">3</strong>
+
+    <audio src="" id="audio"></audio>
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript" src="js/bird.js"></script>
+
+
+

@@ -1,0 +1,84 @@
+body,p,h2{margin:0;padding:0;}
+a{text-decoration:none;}
+html,body{width:100%;height:100%;overflow:hidden;-moz-user-select:none;background:#DEDB94;}
+.game{position: relative;width:100%;height:480px;font-size:12px;background:#4AC2CE;}
+
+/*å°é¸Ÿ*/
+.bird{position: absolute;left:60px;top:190px;z-index:8;width:26px;height:22px;border:1px solid #333;border-radius:50px 15px 30px 30px/30px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background:#fab230;}
+.bird .eye{position: absolute;right:-2px;top:-2px;width:10px;height:10px;border:1px solid #333;line-height:0;text-align:center;border-radius:10px 20px 10px 10px;background:#fff;}
+.bird .month{position: absolute;right:-5px;top:12px;width:15px;height:5px;border:1px solid #333;line-height:6px;border-radius:30px;background:#ff3900;}
+.bird-fly .wing{position: absolute;left:-3px;top:12px;width:12px;height:8px;border-radius:5px 5px 10px 5px;border:1px solid #333;
+	-webkit-transform-origin:50% 0;
+	transform-origin:50% 0;
+	-webkit-animation:wingMove 0.5s ease-out infinite;
+	animation:wingMove 0.5s ease-out infinite;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+	background: #fff;}
+.bird-died .eye{font-size:0;background:#ccc;}
+
+@-webkit-keyframes wingMove{
+	0% {-webkit-transform:rotateX(0);}
+	100% {-webkit-transform:rotateX(-180deg);}
+}
+@keyframes wingMove{
+	0% {transform:rotateX(0);}
+	100%{transform:rotateX(-180deg);}
+}
+
+/*éšœç¢å±‚*/
+.obstacle{position:absolute;left:0;top:0;width:360px;height:380px;}
+.pillar{position:absolute;top:0;width:50px;-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;}
+.pillar-t,.pillar-b,.pillar-t:after,.pillar-b:after{position:absolute;left:0;width:46px;border:2px solid #523942;
+	background:-webkit-gradient(linear, left top, right top, color-stop(0%,#84AA42), color-stop(30%,#D6EF7B),  color-stop(40%,#D6EF7B), color-stop(60%,#94BA52), color-stop(80%,#739E3A), color-stop(100%,#528121));
+	background:-moz-linear-gradient(left, #84AA42 0%, #D6EF7B 30%, #D6EF7B 40%, #94BA52 60%, #739E3A 80%, #528121 100%);
+    background:-ms-linear-gradient(left, #84AA42 0%, #D6EF7B 30%, #D6EF7B 40%, #94BA52 60%, #739E3A 80%, #528121 100%);
+}
+.pillar-t{top:0;height:100px;border-top:none;border-bottom:none;}
+.pillar-b{bottom:0;height:136px;border-top:none;border-bottom:none;}
+.pillar-t:after,.pillar-b:after{left:-4px;content:'';width:50px;height:25px;}
+.pillar-t:after{bottom:0;box-shadow:0 -3px 5px #555;}
+.pillar-b:after{top:0;box-shadow:0 3px 5px #555;}
+.obstacle-b-bar{position:absolute;left:0;bottom:0;width:100%;height:20px;border-top:2px solid #523942;border-bottom:2px solid #D6AA4A;} 
+.obstacle-b-line{height:16px;border-top:2px solid #E6FF8C;border-bottom:2px solid #528121;background:#73be29;}
+.obstacle-b-line:before{position:absolute;top:0;left:0;content:"";width:100%;height:100%;border-radius:10px;
+background:-webkit-gradient(linear, 0 0, 100% 100%, 
+ color-stop(25%,rgba(156,231,90,0.2)), color-stop(26%,rgba(156,231,90,0.8)),
+ color-stop(50%,rgba(156,231,90,0.8)),color-stop(51%,rgba(156,231,90,0.2)),
+ color-stop(75%,rgba(156,231,90,0.2)),color-stop(76%,rgba(156,231,90,0.8)),
+ color-stop(100%,rgba(156,231,90,0.8)));
+background:-moz-linear-gradient(-45deg, rgba(156,231,90,0.2) 25%, rgba(156,231,90,0.8) 26%, rgba(156,231,90,0.8) 50%,rgba(156,231,90,0.2) 51%,rgba(156,231,90,0.2) 75%,rgba(156,231,90,0.8) 76%, rgba(156,231,90,0.8) 100%);
+background:-ms-linear-gradient(-45deg, rgba(156,231,90,0.2) 25%, rgba(156,231,90,0.8) 26%, rgba(156,231,90,0.8) 50%,rgba(156,231,90,0.2) 51%,rgba(156,231,90,0.2) 75%,rgba(156,231,90,0.8) 76%, rgba(156,231,90,0.8) 100%);
+background-size:30px 30px;
+}
+
+
+/*æ¸¸æˆè¿‡ç¨‹*/
+.game-status-layer{position: absolute;left:50%;top:80px;z-index:88;width:280px;margin-left:-140px;}
+.game-status-layer-tit{color:#fff;font:bold 38px/50px "microsoft yahei";-webkit-text-stroke:2px #333;text-align: center;}
+.game-start .game-over-action{padding-top:100px;}
+.game-start .game-btn{margin-left:0;}
+
+.game-over{-webkit-transform:translate3d(0,-500px,0);transform:translate3d(0,-500px,0);}
+.game-status-layer-slidedown{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);
+	-webkit-transition:-webkit-transform .5s ease-out .5s;
+	transition:transform .5s ease-out .5s;}
+.game-status-layer-slideup{-webkit-transform:translate3d(0,-500px,0);transform:translate3d(0,-500px,0);
+	-webkit-transition:-webkit-transform .5s ease-out;
+	transition:transform .5s ease-out;}
+.score{border:2px solid #523942;margin:30px 0;padding:10px;border-radius:5px;background: #DEDB94;}
+.score-info{padding:10px;font:18px/30px "";}
+.score-info .score-key{margin-right:15px;color:#FF2808;}
+.score-info .score-val{color:#333;}
+.game-over-action{text-align:center;font-size:0;}
+.game-btn{display:inline-block;width:120px;height:60px;border:2px solid #333;margin-left:6px;border-radius:5px;color:#FFA24A;font:20px/60px "microsoft yahei";
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(50%,#fff), color-stop(51%,#fff), color-stop(100%,#efefef));
+background:-moz-linear-gradient(top, #fff 0%, #fff 50%, #fff 51%, #efefef 100%);
+background:-ms-linear-gradient(top, #fff 0%, #fff 50%, #fff 51%, #efefef 100%);}
+
+/*è®¡æ—¶å™¨*/
+.counter{position:absolute;left:0;top:95px;width:100%;color:#fff;font:60px/60px "microsoft yahei";text-align:center;-webkit-text-stroke:2px #333;display:none;}
